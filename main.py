@@ -15,12 +15,12 @@ def get_valid_date():
             
             # If the entered date is after today, show error
             if date_obj > today:
-                print("❌ Invalid date! You cannot enter a future date.")
+                print("Invalid date! You cannot enter a future date.")
                 continue  # loop again
 
             return date_input  # valid date
         except ValueError:
-            print("❌ Invalid date format! Please use MM-DD-YYYY.")
+            print("Invalid date format! Please use MM-DD-YYYY.")
 
 
 
@@ -30,7 +30,7 @@ def get_valid_amount():
         try:
             return float(amount)
         except ValueError:
-            print("❌ Invalid amount! Please enter a number.")
+            print("Invalid amount! Please enter a number.")
 
 
 def get_valid_category():
@@ -40,7 +40,7 @@ def get_valid_category():
         if cleaned_category:
             return cleaned_category
         else:
-            print("❌ Category cannot be empty! Please enter a valid category.")
+            print("Category cannot be empty! Please enter a valid category.")
 
 
 
@@ -50,7 +50,7 @@ def get_valid_description():
         if description.strip():
             return description
         else:
-            print("❌ Description cannot be empty! Please enter a valid description.")
+            print("Description cannot be empty! Please enter a valid description.")
 
 
 # ---------- Core functions ----------
@@ -93,7 +93,7 @@ def add_expense():
 
     expenses.append([date, amount, category, description])
     save_expenses()
-    print("\n✅ Expense added successfully!\n")
+    print("\nExpense added successfully!\n")
 
 
 def view_expenses():
@@ -101,14 +101,14 @@ def view_expenses():
     headers = ["Date", "Amount", "Category", "Description"]
 
     if not expenses:
-        print("\n📭 No expenses found!\n")
+        print("\nNo expenses found!\n")
         return
 
     # Column widths
     col_widths = [max(len(str(row[i])) for row in ([headers] + expenses)) for i in range(len(headers))]
 
     # Print header
-    print("\n📊 All Expenses:")
+    print("\nAll Expenses:")
     print("-" * (sum(col_widths) + 3 * (len(headers) - 1)))
     header_row = " | ".join(headers[i].ljust(col_widths[i]) for i in range(len(headers)))
     print(header_row)
@@ -140,7 +140,7 @@ def view_expenses():
 
 # ---------- Menu system ----------
 def main_menu():
-    print("💰 Personal Finance Tracker")
+    print("Personal Finance Tracker")
     while True:  
         print("1. Add an expense")
         print("2. View expenses")
@@ -153,10 +153,10 @@ def main_menu():
         elif choice == "2":
             view_expenses()
         elif choice == "3":
-            print("\n👋 Goodbye!")
+            print("\nGoodbye!")
             break
         else:
-            print("\n❌ Invalid choice! Please select 1, 2, or 3.\n")
+            print("\nInvalid choice! Please select 1, 2, or 3.\n")
 
 # ---------- Entry point ----------
 if __name__ == "__main__":
