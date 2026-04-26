@@ -16,7 +16,7 @@ Interface: Menu-driven CLI
 # **How to run program**
 
 Clone the repository
-git clone https://github.com/abhidabot/expense-tracker-cli.git  
+git clone https://github.com/abhiswrld/expense-tracker-cli.git  
 
 Navigate to the project folder
 cd expense-tracker-cli  
